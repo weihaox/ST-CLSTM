@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Python 3.6](https://img.shields.io/badge/python-3.6-green.svg)
-![Python 1.0](https://img.shields.io/badge/pytorch-1.0-green.svg)
+[![Python 3.6](https://img.shields.io/badge/python-3.6-green.svg)](https://www.python.org/)
+[![PyTorch 1.0](https://img.shields.io/badge/pytorch-1.0-green.svg)](https://pytorch.org/)
 
 # Exploiting Temporal Consistency for Real-Time Video Depth Estimation
 This is the UNOFFICIAL implementation of the paper [***Exploiting Temporal Consistency for Real-Time Video Depth Estimation***](https://arxiv.org/abs/1908.03706), ***ICCV 2019, Haokui Zhang, Chunhua Shen, Ying Li, Yuanzhouhan Cao, Yu Liu, Youliang Yan.***
