@@ -21,7 +21,7 @@ You can download the pre-processed data from [here](https://drive.google.com/fil
 
 When you have downloaded the dataset, run the following command to creat training list.
 ```bash
-    python create_list_nyuv2.py
+python create_list_nyuv2.py
 ```
 
 You can also follow the procedure of [ST-CLSTM](https://github.com/hkzhang91/ST-CLSTM) to preprocess the data. It is based on the oficial Matlab [Toolbox](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html). If Matlab is unavailable for you, there is also a [Python Port Toolbox](https://github.com/GabrielMajeri/nyuv2-python-toolbox) for processing the raw dataset by [GabrielMajeri](https://github.com/GabrielMajeri), which contains code for Higher-level interface to the labeled subset, Raw dataset extraction and preprocessing and Performing data augmentation.
@@ -59,24 +59,21 @@ data_root
 As an example, use the following command to train on NYUDV2.<br>
 
 ```bash
-    CUDA_VISIBLE_DEVICES="0,1,2,3" python train.py --epochs 20 --batch_size 128 \
-                            --resume --do_summary --backbone resnet18  --refinenet R_CLSTM_5 \
-                            --trainlist_path ./data_list/raw_nyu_v2_250k/raw_nyu_v2_250k_fps30_fl5_op0_end_train.json \
-                            --root_path ./data/ --checkpoint_dir ./checkpoint/ --logdir ./log/                           
-
+CUDA_VISIBLE_DEVICES="0,1,2,3" python train.py --epochs 20 --batch_size 128 \
+                        --resume --do_summary --backbone resnet18  --refinenet R_CLSTM_5 \
+                        --trainlist_path ./data_list/raw_nyu_v2_250k/raw_nyu_v2_250k_fps30_fl5_op0_end_train.json \
+                        --root_path ./data/ --checkpoint_dir ./checkpoint/ --logdir ./log/
 ```
 ## Evaluation
 Use the following command to evaluate the trained model on ST-CLSTM [test data](https://github.com/hkzhang91/ST-CLSTM).<br>
 
 ```bash
-    CUDA_VISIBLE_DEVICES="0" python evaluate.py --batch_size 1  --backbone resnet18  --refinenet R_CLSTM_5 --loadckpt ./checkpoint/ \
-                            --testlist_path ./data_list/raw_nyu_v2_250k/raw_nyu_v2_250k_fps30_fl5_op0_end_test.json \
-                            --root_path ./data/st-clstm/  
-
+CUDA_VISIBLE_DEVICES="0" python evaluate.py --batch_size 1  --backbone resnet18  --refinenet R_CLSTM_5 --loadckpt ./checkpoint/ \
+                        --testlist_path ./data_list/raw_nyu_v2_250k/raw_nyu_v2_250k_fps30_fl5_op0_end_test.json \
+                        --root_path ./data/st-clstm/
 ```
 ## Pretrained Model
-You can download the pretrained model: [NYUDV2](https://github.com/hkzhang91/ST-CLSTM/tree/master/CLSTM_Depth_Estimation-master/prediction/trained_models)
-
+You can download the pretrained model: [NYUDV2](https://github.com/hkzhang91/ST-CLSTM/tree/master/CLSTM_Depth_Estimation-master/prediction/trained_models).
 
 ## Citation
 
